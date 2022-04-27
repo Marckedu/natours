@@ -7,19 +7,27 @@ Dark green: #28b485
 
 */
 
-* {
+*, 
+*::after,
+*::before{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  
+   box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
 }
 
 body {
  font-family: "Lato", sans-serif;
  font-weight: 400;
- font-size: 16px;
+ /*font-size: 1.6rem;*/
  line-height: 1.7;
  color: #777;
- padding: 25px;
+ padding: 2.5rem;
+
+ box-sizing: border-box; 
 }
 
 .header {
@@ -33,17 +41,17 @@ body {
 clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100% );/* Establecer limites para la visualizacion de una imagen*/
 }
 
-.logo-box { /* Clase tamaño de logo */ 
+.header__logo-box { /* Clase tamaño de logo */ 
 position: absolute;
-top: 40px;
-left: 40px;
+top: 4rem;
+left: 4rem;
 }
 
-.logo{ /* Clase posicion de logo */
-height: 45px;
+.header__logo{ /* Clase posicion de logo */
+height: 4.5rem;
 }
 
-.text-box{ /* clase posicion de Heading */
+.header__text-box{ /* clase posicion de Heading */
     position: absolute;
     top: 40%;
     left: 50%;
@@ -55,23 +63,23 @@ height: 45px;
 color:#fff;
 text-transform: uppercase;
 backface-visibility: hidden;
-margin-bottom: 40px;
+margin-bottom: 4rem;
 }
 
-.heading-primary-main{/* Propiedades heding main */
+.heading-primary--main{/* Propiedades heding main */
 display: block;
-font-size: 60px;
+font-size: 6rem;
 font-weight: 400;
-letter-spacing: 35px;
+letter-spacing: 3.5rem;
 animation-name: moveInleft;
 animation-duration: 3s;
 }
 
-.heading-primary-sub{ /* Propiedades heiding sub*/
+.heading-primary--sub{ /* Propiedades heiding sub*/
 display: block;
-font-size: 25px;
+font-size: 2.5rem;
 font-weight: 700;
-letter-spacing: 15px;
+letter-spacing: 1.5rem;
 animation-name: moveInright;
 animation-duration: 3s;
 }
@@ -79,11 +87,11 @@ animation-duration: 3s;
 @keyframes moveInleft{ /* animacion para ir de izquieda a derecha */
     0%{
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
 
     }
 80%{
-transform: translateX(15px);
+transform: translateX(1.5rem);
 }
 
 100%{
@@ -96,11 +104,11 @@ transform: translate(0px);
 @keyframes moveInright{ /* animacion para ir de derecha a izquierda*/
     0%{
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
 
     }
     80%{
-        transform: translateX(-15px);
+        transform: translateX(-1.5rem);
     }
     100%{
         transform: translate(0);
@@ -111,7 +119,7 @@ transform: translate(0px);
 @keyframes moveInBtn{ /* animacion para ir de derecha a izquierda*/
     0%{
         opacity: 0;
-        transform: translatey(30px);
+        transform: translatey(3rem);
     }
     100%{
         opacity: 1;
@@ -124,24 +132,24 @@ transform: translate(0px);
 .btn:visited{
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;   
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .3s; 
     position: relative;
 }
 
 .btn:hover{
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
 }
 
 .btn:active{
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 5rem 1rem rgba(0, 0, 0, .2);
 }
 
-.btn-white{
+.btn--white{
     background-color: #fff;
     color: #777;
 }
@@ -151,7 +159,7 @@ transform: translate(0px);
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -160,7 +168,7 @@ transform: translate(0px);
     
 }
 
-.btn-white::after{
+.btn--white::after{
     background-color: #fff;
 }
 
@@ -169,7 +177,7 @@ transform: translate(0px);
     opacity: 0;
 }
 
-.btn-animated{
+.btn--animated{
     animation: moveInBtn .5s ease-out .75s;
     animation-fill-mode: backwards;
 }
